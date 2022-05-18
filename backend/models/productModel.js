@@ -50,8 +50,8 @@ const productSchema = mongoose.Schema({
   userid: {
     type: mongoose.Schema.ObjectId,
     required: true,
-  },
-  active: {type: Boolean, default: false},
+  },  
+  active: {type: Boolean, default: true},
   createdAt: {
     type: Date,
     default: Date.now,

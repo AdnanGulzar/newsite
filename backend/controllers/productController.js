@@ -43,7 +43,8 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
 
 // Get All Product
 exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
-  const resultPerPage = 8;
+  const resultPerPage = parseInt(process.env.productspp);
+  
   const productsCount = await Product.countDocuments();
   const page = req.query.page || 1;
   const skipitem = resultPerPage * (page - 1);
@@ -63,7 +64,7 @@ exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
   // products = await apiFeature.query;
   // const products = await Product.find()
  
- console.log("running")
+ console.log("running");
  
   // SADASDASDASDAS=SDASDSAD
   if(req.query.country&&req.query.city&&req.query.provience){

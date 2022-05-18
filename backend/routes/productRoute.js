@@ -19,7 +19,7 @@ router.route("/products").get(getAllProducts);
 
 router
   .route("/admin/products")
-  .get(isAuthenticatedUser, authorizeRoles("admin"), getAdminProducts);
+  .get(isAuthenticatedUser,  getAdminProducts);
 
 router
   .route("/admin/product/new")

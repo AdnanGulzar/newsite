@@ -40,7 +40,7 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
     "name email"
   );
 
-  if (!order) {
+  if (!order) { 
     return next(new ErrorHander("Order not found with this Id", 404));
   }
 
